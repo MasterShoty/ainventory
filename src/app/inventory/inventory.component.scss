@@ -2,5 +2,14 @@
   padding: 10px;
   table {
     width: 100%;
+    .current-column {
+      width: 27%;
+    }
+  }
+}
+
+::ng-deep {
+  .mat-progress-bar {
+    height: 8px !important;
   }
 }
