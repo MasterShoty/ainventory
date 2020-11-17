@@ -8,6 +8,8 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ChartjsModule } from '@ctrl/ngx-chartjs';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,6 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ChartjsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
@@ -36,6 +40,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSortModule,
     MatProgressBarModule,
     MatTooltipModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,31 @@
 <p>Insert fancy charts here</p>
-<img
-  src="https://www.tapclicks.com/wp-content/uploads/Choosing-The-Right-Chart.jpg"
-  width="100%"
-/>
+
+<mat-grid-list cols="3" rowHeight="500px" role="list">
+  <mat-grid-tile [colspan]="2" [rowspan]="1" role="listitem">
+    <ngx-chartjs
+      [data]="mockBar"
+      type="bar"
+      height="400px"
+      width="600px"
+    ></ngx-chartjs>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="1" role="listitem">
+    <ngx-chartjs
+      [data]="mockPie"
+      height="300px"
+      width="300px"
+      type="doughnut"
+    ></ngx-chartjs>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="1" role="listitem">
+    misc 1
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1" role="listitem">
+    <ngx-chartjs
+      [data]="mockLine"
+      type="line"
+      height="400px"
+      width="600px"
+    ></ngx-chartjs>
+  </mat-grid-tile>
+</mat-grid-list>
