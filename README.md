@@ -1,0 +1,2 @@
+# ainventory
+Inventory predictive analysis
