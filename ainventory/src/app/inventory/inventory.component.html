@@ -21,25 +21,21 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      <td mat-cell *matCellDef="let element" class="name-cell">
+        {{ element.name }}
+      </td>
     </ng-container>
 
     <!-- Current Column -->
     <ng-container matColumnDef="current">
-      <th
-        mat-header-cell
-        mat-sort-header="current.count"
-        *matHeaderCellDef
-        class="current-column"
-      >
+      <th mat-header-cell mat-sort-header="current.count" *matHeaderCellDef>
         Current
       </th>
-      <td mat-cell *matCellDef="let element" style="padding-right: 25px">
+      <td mat-cell *matCellDef="let element" class="current-cell">
         <a style="float: right">
           {{ element.current.count + " " + element.current.type }}
         </a>
         <mat-progress-bar
-          class="example-margin"
           mode="determinate"
           color="black"
           [value]="
@@ -57,15 +53,10 @@
 
     <!-- Incoming Column -->
     <ng-container matColumnDef="incoming">
-      <th
-        mat-header-cell
-        mat-sort-header="incoming.date"
-        *matHeaderCellDef
-        class="incoming-column"
-      >
+      <th mat-header-cell mat-sort-header="incoming.date" *matHeaderCellDef>
         Incoming
       </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell *matCellDef="let element" class="incoming-cell">
         {{
           element.incoming.date +
             " - " +
@@ -78,8 +69,33 @@
 
     <!-- Prediction Column -->
     <ng-container matColumnDef="prediction">
-      <th mat-header-cell mat-sort-header *matHeaderCellDef>Prediction</th>
-      <td mat-cell *matCellDef="let element">{{ element.prediction }}</td>
+      <th mat-header-cell mat-sort-header="prediction" *matHeaderCellDef>
+        Prediction
+      </th>
+      <td mat-cell *matCellDef="let element" class="prediction-cell">
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ this.predictionText[element.prediction.id] }}
+              </mat-panel-title>
+              <!--
+              <mat-panel-description>
+                This is a summary of the content
+              </mat-panel-description>
+            -->
+            </mat-expansion-panel-header>
+            <ngx-chartjs
+              *ngIf="element.prediction.chart"
+              [data]="element.prediction.chart"
+              type="line"
+              [height]="200"
+              [width]="250"
+            ></ngx-chartjs>
+            <p *ngIf="!element.prediction.chart">No Prediction Data</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
