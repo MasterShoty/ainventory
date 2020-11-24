@@ -199,14 +199,14 @@ export class InventoryComponent implements OnInit {
       labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       datasets: [
         {
-          data: [null, null, null, null, null, null, null],
+          data: undefined,
           label: 'record',
           borderColor: '#3f51b5',
           fill: false,
           lineTension: 0,
         },
         {
-          data: [null, null, null, null, null, null, null],
+          data: undefined,
           label: 'prediction',
           borderColor: '#b70000',
           borderDash: [4, 8],
@@ -221,7 +221,9 @@ export class InventoryComponent implements OnInit {
         },
       },
     };
+    // @ts-ignore
     chart.datasets[0].data = element.prediction.data;
+    // @ts-ignore
     chart.datasets[1].data = element.prediction.predict;
     element.prediction.chart = chart;
   }
