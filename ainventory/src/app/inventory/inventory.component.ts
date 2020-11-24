@@ -100,8 +100,8 @@ const MOCK_DATA_MEAT: Product[] = [
     },
   },
   {
-    name: '325 ',
-    id: '325 ',
+    name: '325',
+    id: '325',
     current: { count: 28000, total: 30000, type: 'units' },
     incoming: { count: 0, date: '' },
     prediction: {
@@ -115,7 +115,7 @@ const MOCK_DATA_MEAT: Product[] = [
   },
   {
     name: '972',
-    id: '972 ',
+    id: '972',
     current: { count: 184310, total: 200000, type: 'units' },
     incoming: { count: 0, date: '' },
     prediction: {
@@ -129,7 +129,7 @@ const MOCK_DATA_MEAT: Product[] = [
   },
   {
     name: '1109',
-    id: '1109 ',
+    id: '1109',
     current: { count: 700000, total: 720000, type: 'units' },
     incoming: { count: 0, date: '' },
     prediction: {
@@ -143,7 +143,7 @@ const MOCK_DATA_MEAT: Product[] = [
   },
 ];
 
-const REAL_ID = ['303', '325', '972'];
+const REAL_ID = ['303', '325', '972', '1109'];
 
 const BASE_LINE = {
   labels: [
