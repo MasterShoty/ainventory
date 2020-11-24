@@ -10,8 +10,11 @@ export interface Product {
   incoming: { count: number; date: string }; // Let date be string for now
   prediction: {
     id: string;
+    text?: string;
     data: (number | null)[];
     predict: (number | null)[];
+    estimate?: number;
+    error?: number;
     chart?: any;
   }; // Undetermined type
 }
@@ -21,12 +24,6 @@ export interface Tab {
   data?: Product[];
 }
 
-const PREDICTION_TEXT = {
-  '-1': 'NOT ENOUGH',
-  '0': 'GOOD',
-  '1': 'TOO MUCH',
-};
-
 const MOCK_DATA_MEAT: Product[] = [
   {
     name: 'Lamb Chops',
@@ -35,6 +32,7 @@ const MOCK_DATA_MEAT: Product[] = [
     incoming: { count: 50, date: 'Nov. 26' },
     prediction: {
       id: '0',
+      text: 'GOOD',
       data: [21, 23, 25, 36, 31, null, null],
       predict: [null, null, null, null, 31, 24, 33],
     },
@@ -46,6 +44,7 @@ const MOCK_DATA_MEAT: Product[] = [
     incoming: { count: 300, date: 'Nov. 26' },
     prediction: {
       id: '0',
+      text: 'GOOD',
       data: [283, 240, 352, 289, 344, null, null],
       predict: [null, null, null, null, 344, 532, 484],
     },
@@ -57,6 +56,7 @@ const MOCK_DATA_MEAT: Product[] = [
     incoming: { count: 30, date: 'Nov. 26' },
     prediction: {
       id: '-1',
+      text: 'NOT ENOUGH',
       data: [10, 12, 11, 13, 11, null, null],
       predict: [null, null, null, null, 11, 13, 12],
     },
@@ -68,6 +68,7 @@ const MOCK_DATA_MEAT: Product[] = [
     incoming: { count: 120, date: 'Nov. 24' },
     prediction: {
       id: '1',
+      text: 'TOO MUCH',
       data: [30, 28, 35, 51, 44, null, null],
       predict: [null, null, null, null, 44, 92, 88],
     },
@@ -79,11 +80,70 @@ const MOCK_DATA_MEAT: Product[] = [
     incoming: { count: 400, date: 'Nov. 27' },
     prediction: {
       id: '-1',
+      text: 'NOT ENOUGH',
       data: [28, 35, 41, 94, 68, null, null],
       predict: [null, null, null, null, 68, 78, 104],
     },
   },
+  {
+    name: '303',
+    id: '303',
+    current: { count: 131231, total: 140000, type: 'units' },
+    incoming: { count: 0, date: '' },
+    prediction: {
+      id: '-1',
+      text: 'NOT ENOUGH',
+      data: [162640, 157445, 144224, 132809, 127733, 127733, null],
+      predict: [null, null, null, null, null, 127733, 126164],
+      estimate: 126164,
+      error: 1.02,
+    },
+  },
+  {
+    name: '325 ',
+    id: '325 ',
+    current: { count: 28000, total: 30000, type: 'units' },
+    incoming: { count: 0, date: '' },
+    prediction: {
+      id: '1',
+      text: 'TOO MUCH',
+      data: [32635, 31647, 29120, 28104, 28409, 27719, null],
+      predict: [null, null, null, null, null, 27719, 22706],
+      estimate: 22706,
+      error: 20.56,
+    },
+  },
+  {
+    name: '972',
+    id: '972 ',
+    current: { count: 184310, total: 200000, type: 'units' },
+    incoming: { count: 0, date: '' },
+    prediction: {
+      id: '1',
+      text: 'TOO MUCH',
+      data: [255116, 233670, 206396, 201743, 192770, 181891, null],
+      predict: [null, null, null, null, null, 181891, 130254],
+      estimate: 130254,
+      error: 26.98,
+    },
+  },
+  {
+    name: '1109',
+    id: '1109 ',
+    current: { count: 700000, total: 720000, type: 'units' },
+    incoming: { count: 0, date: '' },
+    prediction: {
+      id: '0',
+      text: 'GOOD',
+      data: [645898, 621722, 613047, 600842, 634467, 669484, null],
+      predict: [null, null, null, null, null, 669484, 702814],
+      estimate: 702814,
+      error: 4.83,
+    },
+  },
 ];
+
+const REAL_ID = ['303', '325', '972'];
 
 const BASE_LINE = {
   labels: [
@@ -137,7 +197,6 @@ export class InventoryComponent implements OnInit {
   dataSource?: MatTableDataSource<Product>;
   inventoryTabs = RESTAURANT_TABS;
   displayedColumns: string[] = ['name', 'current', 'incoming', 'prediction'];
-  predictionText = PREDICTION_TEXT;
 
   @ViewChild(MatSort) sort: MatSort | null = null;
   constructor() {}
@@ -225,6 +284,17 @@ export class InventoryComponent implements OnInit {
     chart.datasets[0].data = element.prediction.data;
     // @ts-ignore
     chart.datasets[1].data = element.prediction.predict;
+    if (REAL_ID.includes(element.id)) {
+      chart.labels = [
+        'Week 1',
+        'Week 2',
+        'Week 3',
+        'Week 4',
+        'Week 5',
+        'Week 6',
+        'Week 7',
+      ];
+    }
     element.prediction.chart = chart;
   }
 }

@@ -57,13 +57,15 @@
         Incoming
       </th>
       <td mat-cell *matCellDef="let element" class="incoming-cell">
-        {{
-          element.incoming.date +
-            " - " +
-            element.incoming.count +
-            " " +
-            element.current.type
-        }}
+        <p *ngIf="element.incoming.date">
+          {{
+            element.incoming.date +
+              " - " +
+              element.incoming.count +
+              " " +
+              element.current.type
+          }}
+        </p>
       </td>
     </ng-container>
 
@@ -77,13 +79,15 @@
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                {{ this.predictionText[element.prediction.id] }}
+                {{ element.prediction.text }}
               </mat-panel-title>
-              <!--
-              <mat-panel-description>
-                This is a summary of the content
+              <mat-panel-description
+                *ngIf="
+                  element.prediction.id !== '0' && element.prediction.estimate
+                "
+              >
+                {{ element.prediction.estimate }}
               </mat-panel-description>
-            -->
             </mat-expansion-panel-header>
             <ngx-chartjs
               *ngIf="element.prediction.chart"
@@ -92,6 +96,9 @@
               [height]="200"
               [width]="250"
             ></ngx-chartjs>
+            <p *ngIf="element.prediction.error">
+              {{ element.prediction.error }}% error
+            </p>
             <p *ngIf="!element.prediction.chart">No Prediction Data</p>
           </mat-expansion-panel>
         </mat-accordion>
