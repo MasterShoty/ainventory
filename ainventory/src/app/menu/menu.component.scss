@@ -1,0 +1,11 @@
+.menu-content {
+  display: flex;
+  flex-wrap: wrap;
+  .menu-card {
+    width: 33%;
+    min-width: 300px;
+    .ingredients-list {
+      height: 125px;
+    }
+  }
+}

@@ -20,6 +20,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MenuComponent } from './menu/menu.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     DashboardComponent,
     InventoryComponent,
     NavbarComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTooltipModule,
     MatGridListModule,
     MatExpansionModule,
+    MatSidenavModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

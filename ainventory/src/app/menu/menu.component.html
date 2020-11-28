@@ -1,0 +1,247 @@
+<div class="menu-content">
+  <!-- <mat-drawer-container class="menu-card" *ngFor="let e of recipes" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+      <div>
+        <iframe
+          id="trends-widget-1"
+          title="trends-widget-1"
+          [src]="sanitizer.bypassSecurityTrustResourceUrl(e.trendsrc)"
+          width="100%"
+          frameborder="0"
+          scrolling="0"
+          style="height: 250px"
+        ></iframe>
+        <button type="button" mat-button (click)="drawer.toggle()">x</button>
+      </div>
+    </mat-drawer>
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ e.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="ingredients-list">
+        <p *ngFor="let i of e.ingredients">
+          {{ i.amount }}{{ i.unit }} {{ i.name }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="button" mat-button (click)="drawer.toggle()">
+          View Trends
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-drawer-container> -->
+  <mat-drawer-container class="menu-card" autosize>
+    <mat-drawer #drawer1 class="example-sidenav" mode="over">
+      <div>
+        <iframe
+          id="trends-widget-1"
+          title="trends-widget-1"
+          src="https://trends.google.com:443/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22Moscow%20Mule%22%2C%22geo%22%3A%22CA%22%2C%22time%22%3A%222018-10-27%202020-11-27%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&amp;tz=300&amp;eq=date%3Dtoday%25205-y%26geo%3DCA%26q%3D"
+          width="100%"
+          frameborder="0"
+          scrolling="0"
+          style="height: 280px"
+        ></iframe>
+        <button
+          type="button"
+          mat-button
+          (click)="drawer1.toggle()"
+          style="float: right"
+        >
+          x
+        </button>
+      </div>
+    </mat-drawer>
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ recipes[0].name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="ingredients-list">
+        <p *ngFor="let i of recipes[0].ingredients">
+          {{ i.amount }}{{ i.unit }} {{ i.name }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="button" mat-button (click)="drawer1.toggle()">
+          View Trends
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-drawer-container>
+
+  <mat-drawer-container class="menu-card" autosize>
+    <mat-drawer #drawer2 class="example-sidenav" mode="over">
+      <div>
+        <iframe
+          id="trends-widget-2"
+          title="trends-widget-2"
+          src="https://trends.google.com:443/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22Daiquiri%22%2C%22geo%22%3A%22CA%22%2C%22time%22%3A%222018-10-27%202020-11-27%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&amp;tz=300&amp;eq=date%3Dtoday%25205-y%26geo%3DCA%26q%3Dwhiskey"
+          width="100%"
+          frameborder="0"
+          scrolling="0"
+          style="height: 280px"
+        ></iframe>
+        <button
+          type="button"
+          mat-button
+          (click)="drawer2.toggle()"
+          style="float: right"
+        >
+          x
+        </button>
+      </div>
+    </mat-drawer>
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ recipes[1].name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="ingredients-list">
+        <p *ngFor="let i of recipes[1].ingredients">
+          {{ i.amount }}{{ i.unit }} {{ i.name }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="button" mat-button (click)="drawer2.toggle()">
+          View Trends
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-drawer-container>
+
+  <mat-drawer-container class="menu-card" autosize>
+    <mat-drawer #drawer3 class="example-sidenav" mode="over">
+      <div>
+        <iframe
+          id="trends-widget-2"
+          title="trends-widget-2"
+          src="https://trends.google.ca:443/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22Manhattan%20Cocktail%22%2C%22geo%22%3A%22CA-ON%22%2C%22time%22%3A%222018-10-27%202020-11-27%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&amp;tz=300&amp;eq=date%3Dtoday%25205-y%26geo%3DCA-ON%26q%3Dmanhattan%2520cocktail"
+          width="100%"
+          frameborder="0"
+          scrolling="0"
+          style="height: 280px"
+        ></iframe>
+        <button
+          type="button"
+          mat-button
+          (click)="drawer3.toggle()"
+          style="float: right"
+        >
+          x
+        </button>
+      </div>
+    </mat-drawer>
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ recipes[2].name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="ingredients-list">
+        <p *ngFor="let i of recipes[2].ingredients">
+          {{ i.amount }}{{ i.unit }} {{ i.name }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="button" mat-button (click)="drawer3.toggle()">
+          View Trends
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-drawer-container>
+
+  <mat-drawer-container class="menu-card" autosize>
+    <mat-drawer #drawer4 class="example-sidenav" mode="over">
+      <div>
+        <iframe
+          id="trends-widget-2"
+          title="trends-widget-2"
+          src="https://trends.google.ca:443/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22Aperol%20Spritz%22%2C%22geo%22%3A%22CA-ON%22%2C%22time%22%3A%222018-10-27%202020-11-27%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&amp;tz=300&amp;eq=date%3Dtoday%25205-y%26geo%3DCA-ON%26q%3Dmanhattan%2520cocktail"
+          width="100%"
+          frameborder="0"
+          scrolling="0"
+          style="height: 280px"
+        ></iframe>
+        <button
+          type="button"
+          mat-button
+          (click)="drawer4.toggle()"
+          style="float: right"
+        >
+          x
+        </button>
+      </div>
+    </mat-drawer>
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ recipes[3].name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="ingredients-list">
+        <p *ngFor="let i of recipes[3].ingredients">
+          {{ i.amount }}{{ i.unit }} {{ i.name }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="button" mat-button (click)="drawer4.toggle()">
+          View Trends
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-drawer-container>
+</div>
+<!-- <iframe
+  src="https://trends.google.com:443/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22Moscow%20Mule%22%2C%22geo%22%3A%22CA%22%2C%22time%22%3A%222018-10-27%202020-11-27%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&amp;tz=300&amp;eq=date%3Dtoday%25205-y%26geo%3DCA%26q%3D"
+  width="33%"
+  frameborder="0"
+  scrolling="0"
+  style="
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 2px 0px,
+      rgba(0, 0, 0, 0.24) 0px 2px 2px 0px;
+    height: 423px;
+  "
+></iframe>
+<iframe
+  id="trends-widget-2"
+  title="trends-widget-2"
+  src="https://trends.google.com:443/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22Daiquiri%22%2C%22geo%22%3A%22CA%22%2C%22time%22%3A%222018-10-27%202020-11-27%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&amp;tz=300&amp;eq=date%3Dtoday%25205-y%26geo%3DCA%26q%3Dwhiskey"
+  width="33%"
+  frameborder="0"
+  scrolling="0"
+  style="
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 2px 0px,
+      rgba(0, 0, 0, 0.24) 0px 2px 2px 0px;
+    height: 423px;
+  "
+></iframe>
+<iframe
+  id="trends-widget-3"
+  title="trends-widget-3"
+  src="https://trends.google.ca:443/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22Manhattan%20Cocktail%22%2C%22geo%22%3A%22CA-ON%22%2C%22time%22%3A%222018-10-27%202020-11-27%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&amp;tz=300&amp;eq=date%3Dtoday%25205-y%26geo%3DCA-ON%26q%3Dmanhattan%2520cocktail"
+  width="33%"
+  frameborder="0"
+  scrolling="0"
+  style="
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 2px 0px,
+      rgba(0, 0, 0, 0.24) 0px 2px 2px 0px;
+    height: 423px;
+  "
+></iframe>
+<iframe
+  id="trends-widget-4"
+  title="trends-widget-4"
+  src="https://trends.google.ca:443/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22Aperol%20Spritz%22%2C%22geo%22%3A%22CA-ON%22%2C%22time%22%3A%222018-10-27%202020-11-27%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&amp;tz=300&amp;eq=date%3Dtoday%25205-y%26geo%3DCA-ON%26q%3Dmanhattan%2520cocktail"
+  width="33%"
+  frameborder="0"
+  scrolling="0"
+  style="
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 2px 0px,
+      rgba(0, 0, 0, 0.24) 0px 2px 2px 0px;
+    height: 423px;
+  "
+></iframe> -->
