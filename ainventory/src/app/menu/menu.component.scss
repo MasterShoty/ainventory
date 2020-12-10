@@ -1,11 +1,23 @@
 .menu-content {
   display: flex;
   flex-wrap: wrap;
+
   .menu-card {
     width: 33%;
     min-width: 300px;
+
+    .menu-sidenav {
+      width: 85%;
+    }
+
     .ingredients-list {
-      height: 125px;
+      height: 175px;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 }

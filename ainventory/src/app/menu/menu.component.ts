@@ -15,31 +15,58 @@ const RECIPES = [
   {
     name: 'Moscow Mule',
     ingredients: [
-      { amount: '1.5', unit: 'oz', name: 'Vodka', type: 'A' },
+      { amount: '1 1/2', unit: 'oz', name: 'Vodka', type: 'A' },
       { amount: '1/6', unit: 'oz', name: 'Lime juice', type: 'PG' },
       { amount: '4', unit: 'oz', name: 'Ginger beer', type: 'A' },
     ],
     trendsrc: '',
   },
   {
-    name: 'Daiquiri',
+    name: 'Porterhouse',
     ingredients: [
-      { amount: '1.5', unit: 'oz', name: 'White rum', type: 'A' },
-      { amount: '1/6', unit: 'oz', name: 'Lime juice', type: 'PG' },
-      { amount: '1/2', unit: 'oz', name: 'Simple syrup', type: 'S' },
+      { amount: '1', unit: '', name: 'Porthouse steak', type: 'PG' },
+      { amount: '5', unit: 'tbsp', name: 'Unsalted butter', type: 'SS' },
+      { amount: '', unit: '', name: 'Salt', type: 'SS' },
+      { amount: '', unit: '', name: 'Pepper', type: 'SS' },
     ],
     trendsrc: '',
   },
   {
-    name: 'Manhattan Cocktail',
+    name: 'Pumkin Pie',
     ingredients: [
-      { amount: '2', unit: 'oz', name: 'Canadian Rye', type: 'A' },
-      { amount: '1', unit: 'oz', name: 'Sweet Vermouth', type: 'A' },
-      { amount: '2', unit: 'dash', name: 'Angostura bitters', type: 'A' },
-      { amount: '1', unit: '', name: 'Brandied Cherry', type: 'PG' },
+      { amount: '15', unit: 'oz', name: 'Pumkin puree', type: 'PG' },
+      { amount: '1 1/2', unit: 'cup', name: 'Heavy cream', type: 'PG' },
+      { amount: '2', unit: '', name: 'Eggs', type: 'PG' },
+      { amount: '1/2', unit: 'cup', name: 'Brown sugar', type: 'SS' },
+      { amount: '1/3', unit: 'cup', name: 'White sugar', type: 'SS' },
+      { amount: '1/2', unit: 'tsp', name: 'Salt', type: 'SS' },
+      { amount: '2', unit: 'tsp', name: 'Cinnamon', type: 'SS' },
+      { amount: '1', unit: 'tsp', name: 'Ground ginger', type: 'SS' },
+      { amount: '1/4', unit: 'tsp', name: 'Ground nutmeg', type: 'SS' },
+      { amount: '1/4', unit: 'tsp', name: 'Ground cloves', type: 'SS' },
+      { amount: '1', unit: '', name: 'Pie crust', type: 'PG' },
     ],
     trendsrc: '',
   },
+  // {
+  //   name: 'Daiquiri',
+  //   ingredients: [
+  //     { amount: '1.5', unit: 'oz', name: 'White rum', type: 'A' },
+  //     { amount: '1/6', unit: 'oz', name: 'Lime juice', type: 'PG' },
+  //     { amount: '1/2', unit: 'oz', name: 'Simple syrup', type: 'S' },
+  //   ],
+  //   trendsrc: '',
+  // },
+  // {
+  //   name: 'Manhattan Cocktail',
+  //   ingredients: [
+  //     { amount: '2', unit: 'oz', name: 'Canadian Rye', type: 'A' },
+  //     { amount: '1', unit: 'oz', name: 'Sweet Vermouth', type: 'A' },
+  //     { amount: '2', unit: 'dash', name: 'Angostura bitters', type: 'A' },
+  //     { amount: '1', unit: '', name: 'Brandied Cherry', type: 'PG' },
+  //   ],
+  //   trendsrc: '',
+  // },
   {
     name: 'Aperol Spritz',
     ingredients: [
